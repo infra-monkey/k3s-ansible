@@ -21,6 +21,11 @@ kind: L2Advertisement
 metadata:
   name: default
   namespace: metallb-system
+{% if metal_lb_iface is defined %}
+spec:
+  interfaces:
+  - {{ metal_lb_iface }}
+{% endif %}
 {% endif %}
 {% if metal_lb_mode == "bgp" %}
 ---
