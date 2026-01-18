@@ -26,6 +26,11 @@ spec:
   interfaces:
   - {{ metal_lb_iface }}
 {% endif %}
+{% if metal_lb_nodeselector is defined %}
+  nodeSelectors:
+    matchLabels:
+      {{ metal_lb_nodeselector }}
+{% endif %}
 {% endif %}
 {% if metal_lb_mode == "bgp" %}
 ---
