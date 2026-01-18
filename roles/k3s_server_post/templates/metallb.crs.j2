@@ -28,8 +28,8 @@ spec:
 {% endif %}
 {% if metal_lb_nodeselector is defined %}
   nodeSelectors:
-    matchLabels:
-      {{ metal_lb_nodeselector }}
+    - matchLabels:
+        {{ metal_lb_nodeselector }}
 {% endif %}
 {% endif %}
 {% if metal_lb_mode == "bgp" %}
